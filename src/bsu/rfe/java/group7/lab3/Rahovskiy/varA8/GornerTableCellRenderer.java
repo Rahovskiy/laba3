@@ -19,16 +19,7 @@ public class GornerTableCellRenderer implements TableCellRenderer {
     private String needle = null;
     private DecimalFormat formatter =
             (DecimalFormat)NumberFormat.getInstance();
-    // Дополнительный метод для проверки, совпадает ли дробная часть числа с целой
-    private boolean isCoincideFractionalAndIntegerPartsOfNumber(String number) {
-        String[] str = number.split("\\.");
-        if (str.length == 2) {
-            if (str[0].compareTo(str[1]) == 0) {
-                return true;
-            }
-        }
-        return false;
-    }
+
     public GornerTableCellRenderer() {
 // Показывать только 5 знаков после запятой
         formatter.setMaximumFractionDigits(5);
@@ -60,9 +51,7 @@ public class GornerTableCellRenderer implements TableCellRenderer {
 // значение иголки совпадает со значением ячейки таблицы -
 // окрасить задний фон панели в красный цвет
             panel.setBackground(Color.RED);
-        } else if (col==1 && isCoincideFractionalAndIntegerPartsOfNumber(formattedType)) {
-            panel.setBackground(Color.GREEN);
-        } else {
+        }  else {
 // Иначе - в обычный белый
             panel.setBackground(Color.WHITE);
         }

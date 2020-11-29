@@ -51,19 +51,17 @@ public class GornerTableModel extends AbstractTableModel {
             // Если запрашивается значение 2-го столбца, то это значение
             // многочлена
             case 1: {
-                result=round(result,2);
+
                 return result;
             }
             // Если запрашивается значение 3-го столбца, то проверяем на дробную часть
             case 2:
 
-
                 result=round(result,2);
-
                 int full = (int) result;
-                double drob=(int)((result-full)*100);
-                System.out.println(drob);
-                if(drob%2==0)
+                int drob=(int)((result-full)*100);
+                // System.out.println(drob);
+                if(drob % 2==0)
                     return false;
                 else return true;
 
@@ -91,7 +89,7 @@ public class GornerTableModel extends AbstractTableModel {
 // И в 1-ом и во 2-ом столбце находятся значения типа Double
         if (col==2)
             return Boolean.class;
-        else return String.class;
+        else return Double.class;
 
     }
     private static double round(double value, int places) {

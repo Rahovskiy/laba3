@@ -127,7 +127,7 @@ public class MainFrame extends JFrame {
         // Создать новое действие показа информации о программе
         Action showInfoProgramAction = new AbstractAction("О программе") {
             public void actionPerformed(ActionEvent event) {
-                JOptionPane.showMessageDialog(MainFrame.this, "Янкин А. \n 7 группа");
+                JOptionPane.showMessageDialog(MainFrame.this, "Раховский Дмитрий 7 группа");
             }
         };
         // Добавить соответсвующий пункт подменю в меню "О программе"
